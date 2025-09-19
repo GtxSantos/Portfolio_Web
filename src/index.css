@@ -178,7 +178,7 @@ body {
   animation: star-float 4s ease-in-out infinite;
 }
 
-/* Adicione uma névoa suave */
+/* uma névoa suave */
 .sky-fog {
   position: fixed;
   top: 0;
@@ -194,7 +194,7 @@ body {
   z-index: 1;
 }
 
-/* Adicione a animação ao elemento da nuvem no JSX */
+/* animação ao elemento da nuvem no JSX */
 .cloud {
   animation: float-cloud 10s ease-in-out infinite;
   backdrop-filter: blur(4px);

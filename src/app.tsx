@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from 'react';
 import { ChevronDown, Github, Linkedin, Mail, Rocket, Code, Palette, Sparkles, Copy } from 'lucide-react';
 
-// --- DADOS DO PORTFÓLIO (MODIFIQUE AQUI PARA PERSONALIZAR) ---
+// --- DADOS DO PORTFÓLIO  --- //
 interface PortfolioData {
   name: string;
   role: string;
@@ -9,6 +9,7 @@ interface PortfolioData {
   contactEmail: string;
   githubUrl: string;
   linkedinUrl: string;
+  profileImageUrl: string;
   skills: Array<{
     icon: any;
     title: string;
@@ -28,6 +29,8 @@ const portfolioData: PortfolioData = {
   contactEmail: "mailto:gt.santosx04@gmail.com",
   githubUrl: "https://github.com/GtxSantos",
   linkedinUrl: "https://www.linkedin.com/in/gustavo-santos-076729321",
+  profileImageUrl: "https://i.imgur.com/YTCfLb0.png",
+  
   skills: [
     { 
       icon: Code, 
@@ -279,16 +282,30 @@ function App() {
         </div>
       </nav>
       <main ref={mainContainerRef} className="relative z-10">
-        <section id="inicio" className="min-h-screen flex flex-col items-center justify-center p-6 text-center">
-          <h1 className={`text-6xl md:text-8xl font-black mb-4 transition-colors duration-1000 ${getDynamicClass(0.3, 'text-gray-900', 'text-white')}`}>{portfolioData.name}</h1>
-          <p className={`text-xl md:text-2xl mb-8 transition-colors duration-1000 ${getDynamicClass(0.3, 'text-blue-600', 'text-blue-200')}`}>{portfolioData.role}</p>
-          <div className="flex gap-6 justify-center mb-12">
-            <a href={portfolioData.githubUrl} aria-label="Github" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Github /></a>
-            <a href={portfolioData.linkedinUrl} aria-label="Linkedin" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Linkedin /></a>
-            <a href={portfolioData.contactEmail} aria-label="Email" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Mail /></a>
-          </div>
-          <a href="#sobre" aria-label="Rolar para baixo" className="absolute bottom-10 animate-bounce"><ChevronDown size={32} className={`transition-colors duration-1000 ${getDynamicClass(0.3, 'text-blue-600', 'text-white')}`} /></a>
-        </section>
+        <section id="inicio" className="min-h-screen flex items-center justify-center p-6">
+  <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left">
+    
+    <div className="md:order-2">
+      <img 
+        src={portfolioData.profileImageUrl} 
+        alt={`Foto de ${portfolioData.name}`}
+        className={`w-48 h-48 md:w-64 md:h-64 rounded-full object-cover transition-all duration-1000 shadow-2xl ${getDynamicClass(0.3, 'border-8 border-white shadow-blue-200', 'border-4 border-blue-400/50 shadow-blue-500/30')}`} 
+      />
+    </div>
+    
+    <div className="md:order-1">
+      <h1 className={`text-5xl md:text-7xl font-black mb-4 transition-colors duration-1000 ${getDynamicClass(0.3, 'text-gray-900', 'text-white')}`}>{portfolioData.name}</h1>
+      <p className={`text-xl md:text-2xl mb-8 transition-colors duration-1000 ${getDynamicClass(0.3, 'text-blue-600', 'text-blue-200')}`}>{portfolioData.role}</p>
+      <div className="flex gap-6 justify-center md:justify-start">
+        <a href={portfolioData.githubUrl} aria-label="Github" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Github /></a>
+        <a href={portfolioData.linkedinUrl} aria-label="Linkedin" target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Linkedin /></a>
+        <a href={portfolioData.contactEmail} aria-label="Email" className={`p-3 rounded-full transition-all duration-300 hover:scale-110 ${getDynamicClass(0.3, 'bg-blue-100 text-blue-600 hover:bg-blue-200', 'bg-white/20 text-white hover:bg-white/30')}`}><Mail /></a>
+      </div>
+    </div>
+
+  </div>
+  <a href="#sobre" aria-label="Rolar para baixo" className="absolute bottom-10 animate-bounce"><ChevronDown size={32} className={`transition-colors duration-1000 ${getDynamicClass(0.3, 'text-blue-600', 'text-white')}`} /></a>
+</section>
         <section id="sobre" className="min-h-screen container mx-auto px-6 py-20 flex items-center justify-center">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className={`text-4xl md:text-5xl font-bold mb-8 transition-colors duration-1000 ${getDynamicClass(0.5, 'text-gray-800', 'text-white')}`}>Sobre Mim</h2>
