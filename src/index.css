@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes portalPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: translate(-50%, 60%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 60%) scale(1.05);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: blur(40px);
+  }
+  50% {
+    filter: blur(50px);
+  }
+}
+
+@keyframes portalFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes portalSpin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes portalGlow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: blur(40px) hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    filter: blur(50px) hue-rotate(90deg);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-500px) translateY(500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes star-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-cloud {
+  0%, 100% {
+    transform: translate(-50%, 0) scale(var(--scale, 1));
+    filter: brightness(1);
+  }
+  50% {
+    transform: translate(-50%, -10px) scale(var(--scale, 1));
+    filter: brightness(1.05);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: #030712; /* Fundo escuro para evitar piscar branco */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.8);
+}
+
+.sky-gradient {
+  background: linear-gradient(
+    to bottom,
+    #0f172a 0%,    /* Azul muito escuro */
+    #1e3a8a 50%,   /* Azul profundo */
+    #312e81 75%,   /* Índigo profundo */
+    #4c1d95 100%   /* Roxo profundo */
+  );
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+.star::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(1px);
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, white, transparent);
+  animation: shooting-star 2s linear infinite;
+  opacity: 0;
+}
+
+.constellation {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 20px 2px rgba(255, 255, 255, 0.3),
+    0 0 40px 5px rgba(255, 255, 255, 0.1);
+  animation: star-float 4s ease-in-out infinite;
+}
+
+/* Adicione uma névoa suave */
+.sky-fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(62, 87, 180, 0.1) 0%,
+    rgba(25, 32, 72, 0.2) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Adicione a animação ao elemento da nuvem no JSX */
+.cloud {
+  animation: float-cloud 10s ease-in-out infinite;
+  backdrop-filter: blur(4px);
+}
