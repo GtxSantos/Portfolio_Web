@@ -7,7 +7,7 @@
 
 Bem-vindo ao meu portfólio pessoal, uma aplicação web interativa que leva os visitantes numa viagem visual do céu diurno às profundezas do espaço. Este projeto não só exibe as minhas competências e projetos, mas também integra a API da Google Gemini para criar conteúdo dinâmico e personalizado.
 
-**[Aceda à demonstração ao vivo](https://SEU_LINK_AQUI.com)** (Substitua pelo link do seu site)
+**[Aceda à demonstração ao vivo]([https://SEU_LINK_AQUI.com](https://portfolio-web-six-flax.vercel.app))** 
 
 ---
 
@@ -65,6 +65,10 @@ Para executar este projeto na sua máquina local, siga os passos abaixo:
     A aplicação estará disponível em `http://localhost:5173`.
 
 ---
+📬 Contacto
+Gustavo Santos - gt.santosx04@gmail.com
+
+Link do Projeto: https://github.com/GtxSantos/Portfolio_Web
 
 ## ✏️ Como Personalizar
 
@@ -78,3 +82,8 @@ const portfolioData = {
   profileImageUrl: "O link para a sua foto...",
   // ... e assim por diante
 };
+
+📬 Contacto
+Gustavo Santos - gt.santosx04@gmail.com
+
+Link do Projeto: https://github.com/GtxSantos/Portfolio_Web
