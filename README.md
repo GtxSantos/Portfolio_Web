@@ -78,3 +78,15 @@ const portfolioData = {
   profileImageUrl: "O link para a sua foto...",
   // ... e assim por diante
 };
+
+## 📬 Contacto
+
+Gustavo Santos - [gt.santosx04@gmail.com](mailto:gt.santosx04@gmail.com)
+
+Link do Projeto: [https://github.com/GtxSantos/Portfolio_Web](https://github.com/GtxSantos/Portfolio_Web)
+```
+## 📬 Contacto
+
+Gustavo Santos - [gt.santosx04@gmail.com](mailto:gt.santosx04@gmail.com)
+
+Link do Projeto: [https://github.com/GtxSantos/Portfolio_Web](https://github.com/GtxSantos/Portfolio_Web)
