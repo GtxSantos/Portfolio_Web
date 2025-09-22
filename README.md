@@ -85,7 +85,7 @@ Gustavo Santos - [gt.santosx04@gmail.com](mailto:gt.santosx04@gmail.com)
 
 Link do Projeto: [https://github.com/GtxSantos/Portfolio_Web](https://github.com/GtxSantos/Portfolio_Web)
 ```
-## 📬 Contacto
+## 📬 Contato
 
 Gustavo Santos - [gt.santosx04@gmail.com](mailto:gt.santosx04@gmail.com)
 
