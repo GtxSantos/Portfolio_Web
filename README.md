@@ -83,7 +83,5 @@ const portfolioData = {
   // ... e assim por diante
 };
 
-📬 Contacto
-Gustavo Santos - gt.santosx04@gmail.com
 
-Link do Projeto: https://github.com/GtxSantos/Portfolio_Web
+
